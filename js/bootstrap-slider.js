@@ -708,7 +708,8 @@
 				ticks_labels: [],
 				ticks_snap_bounds: 0,
 				scale: 'linear',
-				focus: false
+				focus: false,
+                idPrefix: false
 			},
 
 			over: false,
