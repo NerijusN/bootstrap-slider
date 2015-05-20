@@ -383,9 +383,11 @@
 
 				sliderMinHandle = document.createElement("div");
 				sliderMinHandle.className = "slider-handle min-slider-handle";
+				if (this.options.idPrefix) sliderMinHandle.id = this.options.idPrefix + '-min-slider-handle';
 
 				sliderMaxHandle = document.createElement("div");
 				sliderMaxHandle.className = "slider-handle max-slider-handle";
+				if (this.options.idPrefix) sliderMaxHandle.id = this.options.idPrefix + '-max-slider-handle';
 
 				sliderTrack.appendChild(sliderTrackLow);
 				sliderTrack.appendChild(sliderTrackSelection);
