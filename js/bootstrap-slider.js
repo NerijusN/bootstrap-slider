@@ -357,7 +357,7 @@
 			var updateSlider = false;
 			var parent = this.element.parentNode;
 			var sliderTrackSelection;
-			var sliderTrackLow, sliderTrackHigh;
+			var sliderTrackLow, sliderTrackHigh, sliderTrackHighLabel, sliderTrackLowLabel;
 			var sliderMinHandle;
 			var sliderMaxHandle;
 
@@ -393,6 +393,18 @@
 				sliderTrack.appendChild(sliderTrackSelection);
 				sliderTrack.appendChild(sliderTrackHigh);
 
+				/* Create labels */
+				sliderTrackHighLabel = document.createElement("div");
+				sliderTrackHighLabel.className = "slider-track-high-label";
+				if (this.options.idPrefix) sliderTrackHighLabel.id = this.options.idPrefix + '-max-slider-handle-label';
+
+				sliderTrackLowLabel = document.createElement("div");
+				sliderTrackLowLabel.className = "slider-track-low-label";
+				if (this.options.idPrefix) sliderTrackLowLabel.id = this.options.idPrefix + '-min-slider-handle-label';
+
+				sliderTrack.appendChild(sliderTrackHighLabel);
+				sliderTrack.appendChild(sliderTrackLowLabel);
+
 				/* Create ticks */
 				this.ticks = [];
 				if (Array.isArray(this.options.ticks) && this.options.ticks.length > 0) {
@@ -409,6 +421,9 @@
 
 				sliderTrack.appendChild(sliderMinHandle);
 				sliderTrack.appendChild(sliderMaxHandle);
+
+				
+				
 
 				this.tickLabels = [];
 				if (Array.isArray(this.options.ticks_labels) && this.options.ticks_labels.length > 0) {
@@ -690,7 +705,7 @@
 				value: 5,
 				range: false,
 				selection: 'before',
-				tooltip: 'show',
+				tooltip: 'none',
 				tooltip_split: false,
 				handle: 'round',
 				reversed: false,
@@ -709,7 +724,7 @@
 				ticks_snap_bounds: 0,
 				scale: 'linear',
 				focus: false,
-                idPrefix: false
+				idPrefix: false
 			},
 
 			over: false,
@@ -906,12 +921,9 @@
 			_showTooltip: function() {
 				if (this.options.tooltip_split === false ){
 	            	this._addClass(this.tooltip, 'in');
-	            	this.tooltip_min.style.display = 'none';
-	            	this.tooltip_max.style.display = 'none';
 		        } else {
 		            this._addClass(this.tooltip_min, 'in');
 		            this._addClass(this.tooltip_max, 'in');
-		            this.tooltip.style.display = 'none';
 		        }
 				this.over = true;
 			},

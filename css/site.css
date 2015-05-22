@@ -1,0 +1,51 @@
+/* ------------------------------------------------------------------------------------------------------------------
+	Slider
+------------------------------------------------------------------------------------------------------------------ */
+.slider {
+    margin-left: 20px;
+    margin-right: 20px;
+    margin-top: 12px;
+    margin-bottom: 24px;
+}
+
+.slider-track {
+    border-radius: 2px;
+    background-image: none;
+    border: 1px #ccc solid;
+    box-shadow: none;
+}
+
+.slider-selection {
+    background-color: #4e596c;
+    border-color: #434d5d;
+    background-image: none;
+    -webkit-box-shadow: none;
+}
+
+.slider-handle {
+    font-size: smaller;
+    background-color: #4e596c;
+    border-color: #434d5d;
+    width: 30px;
+    height: 30px;
+    margin-left: -20px !important;
+    margin-top: -11px !important;
+    color: #fff;
+    vertical-align: middle;
+    text-align: center;
+    line-height: 30px;
+    background-image: none;
+}
+
+.slider-track-high-label {
+    position: absolute;
+    line-height: 60px;
+    right: 0px;
+    font-size: smaller;
+}
+
+.slider-track-low-label {
+    position: absolute;
+    line-height: 60px;
+    left: 0px;
+    font-size: smaller;
